@@ -10,7 +10,7 @@ import kemalakkus.bankinguicompose.data.CardDataProvider
 fun CardSection() {
     val cardItems = CardDataProvider.getCardItems()
     LazyRow {
-        items(cardItems.size) {index ->
+        items(cardItems.size) { index ->
             CardItem(index)
         }
     }

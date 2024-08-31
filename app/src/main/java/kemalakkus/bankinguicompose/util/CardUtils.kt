@@ -9,6 +9,8 @@ import kemalakkus.bankinguicompose.ui.theme.BlueEnd
 import kemalakkus.bankinguicompose.ui.theme.BlueStart
 import kemalakkus.bankinguicompose.ui.theme.GreenEnd
 import kemalakkus.bankinguicompose.ui.theme.GreenStart
+import kemalakkus.bankinguicompose.ui.theme.OrangeEnd
+import kemalakkus.bankinguicompose.ui.theme.OrangeStart
 import kemalakkus.bankinguicompose.ui.theme.PurpleEnd
 import kemalakkus.bankinguicompose.ui.theme.PurpleStart
 
@@ -30,6 +32,12 @@ fun getGradientColor(cardType: CardType): Brush {
             colors = listOf(
                 GreenStart,
                 GreenEnd
+            )
+        )
+        CardType.AMERICAN_EXPRESS -> Brush.linearGradient(
+            colors = listOf(
+                OrangeStart,
+                OrangeEnd
             )
         )
     }
@@ -54,5 +62,6 @@ fun getCardIcon(cardType: CardType): Int {
         CardType.VISA -> R.drawable.ic_visa
         CardType.MASTER_CARD -> R.drawable.ic_mastercard
         CardType.PERSONAL -> R.drawable.ic_visa
+        CardType.AMERICAN_EXPRESS -> R.drawable.ic_mastercard
     }
 }

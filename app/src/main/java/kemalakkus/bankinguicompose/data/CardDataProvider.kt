@@ -32,6 +32,14 @@ object CardDataProvider {
                 balance = 120.423,
                 color = getGradientColor(CardType.PERSONAL),
                 icon = getCardIcon(CardType.PERSONAL)
+            ),
+            Card(
+                cardType = CardType.AMERICAN_EXPRESS,
+                cardNumber = maskCardNumber("1234567890127352"),
+                cardName = "American Express Card",
+                balance = 20.893,
+                color = getGradientColor(CardType.AMERICAN_EXPRESS),
+                icon = getCardIcon(CardType.MASTER_CARD)
             )
         )
     }

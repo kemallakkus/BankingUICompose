@@ -33,14 +33,13 @@ class MainActivity : ComponentActivity() {
                 ) {
                     HomeScreen()
                 }
-
             }
         }
     }
 
     @Composable
     private fun SetBarColor(color: Color) {
-         val systemUiController = rememberSystemUiController()
+        val systemUiController = rememberSystemUiController()
         SideEffect {
             systemUiController.setSystemBarsColor(
                 color = color

@@ -8,8 +8,11 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -20,14 +23,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kemalakkus.bankinguicompose.data.CardDataProvider
+import kemalakkus.bankinguicompose.data.FinanceDataProvider
 
 @Composable
-fun CardItem(
-    index: Int
+fun FinanceItem(
+    index: Int,
 ) {
-    val card = CardDataProvider.getCardItems()[index]
+    val finance = FinanceDataProvider.getFinanceItems()[index]
     var lastItemPadding = 0.dp
-    if (index == CardDataProvider.getCardItems().size - 1) {
+    if (index == FinanceDataProvider.getFinanceItems().size - 1) {
         lastItemPadding = 16.dp
     }
 
@@ -38,38 +42,28 @@ fun CardItem(
         Column(
             modifier = Modifier
                 .clip(RoundedCornerShape(16.dp))
-                .background(card.color)
-                .width(250.dp)
-                .height(150.dp)
+                .background(MaterialTheme.colorScheme.secondaryContainer)
+                .size(120.dp)
                 .clickable { }
-                .padding(horizontal = 16.dp, vertical = 12.dp),
+                .padding(horizontal = 12.dp, vertical = 12.dp),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
-            Image(
-                painterResource(id = card.icon),
-                contentDescription = card.cardType.name,
-                modifier = Modifier.height(32.dp)
-
-            )
-
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(16.dp))
+                    .background(finance.backgroundColor)
+                    .padding(6.dp)
+            ) {
+                Icon(
+                    imageVector = finance.icon,
+                    contentDescription = finance.title,
+                    tint = Color.White,
+                )
+            }
             Text(
-                text = card.cardName,
-                color = Color.White,
-                fontSize = 17.sp,
-                fontWeight = FontWeight.Bold
-            )
-
-            Text(
-                text = "$ ${card.balance}",
-                color = Color.White,
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,
-            )
-
-            Text(
-                text = card.cardNumber,
-                color = Color.White,
-                fontSize = 20.sp,
+                text = finance.title,
+                color = MaterialTheme.colorScheme.onSecondaryContainer,
+                fontSize = 16.sp,
                 fontWeight = FontWeight.Bold
             )
         }
