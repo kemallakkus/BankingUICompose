@@ -14,5 +14,4 @@ fun CardSection() {
             CardItem(index)
         }
     }
-
 }
