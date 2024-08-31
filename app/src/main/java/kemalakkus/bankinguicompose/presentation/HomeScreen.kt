@@ -5,15 +5,30 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import kemalakkus.bankinguicompose.navigation.BottomNavigationBar
+import kemalakkus.bankinguicompose.presentation.component.WalletSection
 
-@Preview
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun HomeScreen() {
+
+    var selectedIndex by remember { mutableIntStateOf(0) }
+
     Scaffold(
         bottomBar = {
-            TODO()
+            BottomNavigationBar(
+                selectedIndex = selectedIndex,
+                onItemSelected = { index ->
+                    selectedIndex = index
+                }
+            )
         }
     ) { paddingValues ->
 
@@ -22,10 +37,10 @@ fun HomeScreen() {
                 .fillMaxSize()
                 .padding(paddingValues)
         ) {
-
+            WalletSection()
         }
 
-        //TopBar()
+        //WalletSection()
         //CardsSection()
         //FinanceSection()
         //CurrenciesSection()
