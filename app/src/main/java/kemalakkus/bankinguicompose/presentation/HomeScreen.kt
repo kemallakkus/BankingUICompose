@@ -17,6 +17,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kemalakkus.bankinguicompose.navigation.BottomNavigationBar
 import kemalakkus.bankinguicompose.presentation.component.CardSection
+import kemalakkus.bankinguicompose.presentation.component.CurrenciesSection
+import kemalakkus.bankinguicompose.presentation.component.FinanceSection
 import kemalakkus.bankinguicompose.presentation.component.WalletSection
 
 @Preview(showBackground = true, showSystemUi = true)
@@ -43,15 +45,17 @@ fun HomeScreen() {
         ) {
             WalletSection()
 
-            Spacer(modifier = Modifier.height(24.dp))
 
             CardSection()
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            FinanceSection()
+
+            CurrenciesSection()
         }
 
-        //WalletSection()
-        //CardsSection()
         //FinanceSection()
         //CurrenciesSection()
     }
-
 }
