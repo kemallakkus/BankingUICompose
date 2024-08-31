@@ -1,4 +1,4 @@
-package kemalakkus.bankinguicompose.data
+package kemalakkus.bankinguicompose.model
 
 import androidx.compose.ui.graphics.vector.ImageVector
 
