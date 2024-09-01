@@ -3,6 +3,6 @@ package kemalakkus.bankinguicompose.model
 enum class CardType {
     VISA,
     MASTER_CARD,
-    PERSONAL,
+    PAYPAL,
     AMERICAN_EXPRESS
 }

@@ -1,5 +1,6 @@
 package kemalakkus.bankinguicompose.presentation.component
 
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -15,15 +16,73 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kemalakkus.bankinguicompose.data.CardDataProvider
 
+//@Composable
+//fun CardItem(
+//    index: Int
+//) {
+//    val card = CardDataProvider.getCardItems()[index]
+//    var lastItemPadding = 0.dp
+//    if (index == CardDataProvider.getCardItems().size - 1) {
+//        lastItemPadding = 16.dp
+//    }
+//
+//    Box(
+//        modifier = Modifier
+//            .padding(start = 16.dp, end = lastItemPadding)
+//    ) {
+//        Column(
+//            modifier = Modifier
+//                .clip(RoundedCornerShape(16.dp))
+//                .background(card.color)
+//                .width(250.dp)
+//                .height(150.dp)
+//                .clickable { }
+//                .padding(horizontal = 16.dp, vertical = 12.dp),
+//            verticalArrangement = Arrangement.SpaceBetween
+//        ) {
+//            Image(
+//                painterResource(id = card.icon),
+//                contentDescription = card.cardType.name,
+//                modifier = Modifier.height(32.dp)
+//
+//            )
+//
+//            Text(
+//                text = card.cardName,
+//                color = Color.White,
+//                fontSize = 17.sp,
+//                fontWeight = FontWeight.Bold
+//            )
+//
+//            Text(
+//                text = "$ ${card.balance}",
+//                color = Color.White,
+//                fontSize = 24.sp,
+//                fontWeight = FontWeight.Bold,
+//            )
+//
+//            Text(
+//                text = card.cardNumber,
+//                color = Color.White,
+//                fontSize = 20.sp,
+//                fontWeight = FontWeight.Bold
+//            )
+//        }
+//    }
+//}
+
+
 @Composable
 fun CardItem(
-    index: Int
+    index: Int,
+    scale: Float
 ) {
     val card = CardDataProvider.getCardItems()[index]
     var lastItemPadding = 0.dp
@@ -34,13 +93,17 @@ fun CardItem(
     Box(
         modifier = Modifier
             .padding(start = 16.dp, end = lastItemPadding)
+            .graphicsLayer(
+                scaleX = scale,
+                scaleY = scale
+            )
     ) {
         Column(
             modifier = Modifier
                 .clip(RoundedCornerShape(16.dp))
                 .background(card.color)
-                .width(250.dp)
-                .height(150.dp)
+                .width(320.dp * scale)
+                .height(200.dp * scale)
                 .clickable { }
                 .padding(horizontal = 16.dp, vertical = 12.dp),
             verticalArrangement = Arrangement.SpaceBetween
@@ -48,28 +111,28 @@ fun CardItem(
             Image(
                 painterResource(id = card.icon),
                 contentDescription = card.cardType.name,
-                modifier = Modifier.height(32.dp)
+                modifier = Modifier.height(32.dp * scale)
 
             )
 
             Text(
                 text = card.cardName,
                 color = Color.White,
-                fontSize = 17.sp,
+                fontSize = 17.sp * scale,
                 fontWeight = FontWeight.Bold
             )
 
             Text(
                 text = "$ ${card.balance}",
                 color = Color.White,
-                fontSize = 24.sp,
+                fontSize = 24.sp * scale,
                 fontWeight = FontWeight.Bold,
             )
 
             Text(
                 text = card.cardNumber,
                 color = Color.White,
-                fontSize = 20.sp,
+                fontSize = 20.sp * scale,
                 fontWeight = FontWeight.Bold
             )
         }

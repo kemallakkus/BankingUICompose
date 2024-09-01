@@ -44,6 +44,10 @@ class MainActivity : ComponentActivity() {
             systemUiController.setSystemBarsColor(
                 color = color
             )
+//            systemUiController.setNavigationBarColor(
+//                color = color,
+//                darkIcons = true // Eğer navigation bar rengi açıksa ikonlar koyu olsun
+//            )
         }
     }
 }

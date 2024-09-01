@@ -1,43 +1,41 @@
 package kemalakkus.bankinguicompose.util
 
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import kemalakkus.bankinguicompose.R
 import kemalakkus.bankinguicompose.model.CardType
 import kemalakkus.bankinguicompose.ui.theme.BlueEnd
 import kemalakkus.bankinguicompose.ui.theme.BlueStart
+import kemalakkus.bankinguicompose.ui.theme.GrayEnd
+import kemalakkus.bankinguicompose.ui.theme.GrayStart
 import kemalakkus.bankinguicompose.ui.theme.GreenEnd
 import kemalakkus.bankinguicompose.ui.theme.GreenStart
-import kemalakkus.bankinguicompose.ui.theme.OrangeEnd
-import kemalakkus.bankinguicompose.ui.theme.OrangeStart
-import kemalakkus.bankinguicompose.ui.theme.PurpleEnd
-import kemalakkus.bankinguicompose.ui.theme.PurpleStart
+import kemalakkus.bankinguicompose.ui.theme.RedEnd
+import kemalakkus.bankinguicompose.ui.theme.RedStart
 
 fun getGradientColor(cardType: CardType): Brush {
     return when (cardType) {
-        CardType.VISA -> Brush.linearGradient(
-            colors = listOf(
-                PurpleStart,
-                PurpleEnd
-            )
-        )
         CardType.MASTER_CARD -> Brush.linearGradient(
             colors = listOf(
-                BlueStart,
-                BlueEnd
+                GrayStart,
+                GrayEnd
             )
         )
-        CardType.PERSONAL -> Brush.linearGradient(
+        CardType.PAYPAL -> Brush.linearGradient(
             colors = listOf(
-                GreenStart,
-                GreenEnd
+                BlueEnd,
+                BlueStart
+            )
+        )
+        CardType.VISA -> Brush.linearGradient(
+            colors = listOf(
+                RedStart,
+                RedEnd
             )
         )
         CardType.AMERICAN_EXPRESS -> Brush.linearGradient(
             colors = listOf(
-                OrangeStart,
-                OrangeEnd
+                GreenStart,
+                GreenEnd
             )
         )
     }
@@ -60,8 +58,8 @@ fun maskCardNumber(cardNumber: String): String {
 fun getCardIcon(cardType: CardType): Int {
     return when (cardType) {
         CardType.VISA -> R.drawable.ic_visa
-        CardType.MASTER_CARD -> R.drawable.ic_mastercard
-        CardType.PERSONAL -> R.drawable.ic_visa
-        CardType.AMERICAN_EXPRESS -> R.drawable.ic_mastercard
+        CardType.MASTER_CARD -> R.drawable.ic_master_card
+        CardType.PAYPAL -> R.drawable.ic_pay_pal
+        CardType.AMERICAN_EXPRESS -> R.drawable.ic_american_express
     }
 }
