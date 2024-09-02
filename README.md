@@ -10,19 +10,19 @@ This repository showcases an Android project built using Jetpack Compose, demons
 - **Scalable UI**: Designed with scalability in mind, allowing easy modifications and additions of new card types.
 - **Material Design**: Follows Material Design guidelines for consistency and a polished user interface.
 
-## Screenshots && Video
+## Screenshots & Video
 
 https://github.com/user-attachments/assets/2ec21f1b-7ff4-47ba-b1b7-c5e733195d25
 
 <div style="display: flex; flex-direction: row;">
-  <img src="https://github.com/user-attachments/assets/8c228401-b763-45ad-b361-d9d0c3a2f742" width="300"/>
-  <img src="https://github.com/user-attachments/assets/841a0387-0f31-43e2-82d4-dd5acfedb57b" width="300"/>
-  <img src="https://github.com/user-attachments/assets/89ebeb01-6246-47c9-82c6-769a25047e1a" width="300"/>
+  <img src="https://github.com/user-attachments/assets/8c228401-b763-45ad-b361-d9d0c3a2f742" width="200"/>
+  <img src="https://github.com/user-attachments/assets/841a0387-0f31-43e2-82d4-dd5acfedb57b" width="200"/>
+  <img src="https://github.com/user-attachments/assets/89ebeb01-6246-47c9-82c6-769a25047e1a" width="200"/>
 </div>
 <div style="display: flex; flex-direction: row;">
-  <img src="https://github.com/user-attachments/assets/e0856f9b-60fc-4ebb-bacb-afb6edb95e7e" width="300"/>
-  <img src="https://github.com/user-attachments/assets/c39a7f42-4241-409e-bc33-41ffa5ee096d" width="300"/>
-  <img src="https://github.com/user-attachments/assets/7e9b70e7-c7b2-408e-85f5-040cdd1f5bcf" width="300"/>
+  <img src="https://github.com/user-attachments/assets/e0856f9b-60fc-4ebb-bacb-afb6edb95e7e" width="200"/>
+  <img src="https://github.com/user-attachments/assets/c39a7f42-4241-409e-bc33-41ffa5ee096d" width="200"/>
+  <img src="https://github.com/user-attachments/assets/7e9b70e7-c7b2-408e-85f5-040cdd1f5bcf" width="200"/>
 </div>
 
 ## Getting Started
